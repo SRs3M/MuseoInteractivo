@@ -1,18 +1,145 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ESTILOS DE PANTALLA DE ACCESO ═══════════════════════════════════════
+   Esta sección define cómo se ve la pantalla inicial donde el usuario 
+   ingresa la contraseña. 
+*/
+
+/* Contenedor principal de la pantalla de acceso */
+#pantalla-acceso {
+  display: flex;                        /* Usa flexbox para centrar contenido */
+  align-items: center;                  /* Centra verticalmente */
+  justify-content: center;              /* Centra horizontalmente */
+  min-height: 100vh;                    /* Ocupa al menos todo el alto de la ventana */
+  background: linear-gradient(135deg, #E6F1FB 0%, #f0f4f8 100%);  /* Gradiente azul */
+  padding: 1rem;                        /* Espacio interior */
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  padding: 2rem;
-  color: #2c2c2a;
+/* Tarjeta blanca con el formulario de acceso */
+.acceso-card {
+  background: #ffffff;                  /* Fondo blanco */
+  border-radius: 16px;                  /* Esquinas redondeadas */
+  padding: 2.5rem 2rem;                 /* Espacio interior */
+  width: 100%;                          /* Ancho 100% del contenedor */
+  max-width: 360px;                     /* Pero máximo 360px */
+  box-shadow: 0 8px 32px rgba(24, 95, 165, 0.12);  /* Sombra suave */
+  text-align: center;                   /* Texto centrado */
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #185fa5;
+/* Título principal de la tarjeta */
+.acceso-card h1 {
+  font-size: 1.6rem;                    /* Tamaño grande */
+  color: #185FA5;                       /* Azul corporativo */
+  margin-bottom: 0.25rem;               /* Espacio debajo */
+}
+
+/* Subtítulo de la tarjeta */
+.acceso-card h2 {
+  font-size: 0.95rem;                   /* Tamaño más pequeño */
+  color: #888888;                       /* Gris */
+  font-weight: 400;                     /* Grosor normal (no negrita) */
+  margin-bottom: 1.5rem;                /* Espacio debajo */
+}
+
+/* Descripción de instrucciones */
+.acceso-subtitulo {
+  font-size: 0.9rem;                    /* Tamaño pequeño */
+  color: #555555;                       /* Gris más oscuro */
+  margin-bottom: 1.25rem;               /* Espacio debajo */
+}
+
+/* Campo de entrada de contraseña */
+#campo-clave {
+  width: 90%;                          /* Ancho completo */
+  padding: 0.75rem 1rem;                /* Espacio interior */
+  border: 1.5px solid #DDDDDD;          /* Borde gris claro */
+  border-radius: 8px;                   /* Esquinas suavemente redondeadas */
+  font-size: 1rem;                      /* Tamaño normal */
+  letter-spacing: 2px;                  /* Espaciado entre letras (efecto punteado) */
+  margin-bottom: 0.75rem;               /* Espacio debajo */
+  outline: none;                        /* Sin borde al enfocarse */
+  transition: border-color 0.2s;        /* Transición suave de color */
+  font-family: Arial, sans-serif;       /* Fuente legible */
+}
+
+/* Cuando el usuario hace clic en el campo (enfoque) */
+#campo-clave:focus {
+  border-color: #185FA5;                /* El borde se vuelve azul */
+}
+
+/* Botón "Entrar al museo" */
+#btn-entrar {
+  width: 100%;                          /* Ancho completo */
+  padding: 0.75rem;                     /* Espacio interior */
+  background: #185FA5;                  /* Fondo azul corporativo */
+  color: #ffffff;                       /* Texto blanco */
+  border: none;                         /* Sin borde */
+  border-radius: 8px;                   /* Esquinas redondeadas */
+  font-size: 1rem;                      /* Tamaño normal */
+  font-weight: 500;                     /* Grosor semi-negrita */
+  cursor: pointer;                      /* El cursor cambia a mano al pasar */
+  transition: background 0.2s;          /* Transición suave de color */
+  font-family: Arial, sans-serif;       /* Fuente legible */
+}
+
+/* Cuando el usuario pasa el mouse sobre el botón (hover) */
+#btn-entrar:hover {
+  background: #1451A0;                  /* Azul más oscuro */
+}
+
+/* Mensaje de error (contraseña incorrecta) */
+.error-msg {
+  color: #C62828;                       /* Color rojo para error */
+  font-size: 0.85rem;                   /* Tamaño pequeño */
+  margin-top: 0.75rem;                  /* Espacio encima */
+  display: none;                        /* OCULTO por defecto */
+                                        /* JavaScript lo cambia a "block" si hay error */
+}
+
+/* ESTILOS DEL CONTENIDO DEL MUSEO ═══════════════════════════════════
+   Esta sección define cómo se ve el museo después de ingresar la contraseña.
+*/
+
+/* Contenedor principal del museo */
+#contenido-museo {
+  display: none;                        /* OCULTO por defecto */
+                                        /* JavaScript lo cambia a "block" después de verificar contraseña */
+}
+
+/* Encabezado del museo (título y tema) */
+.museo-header {
+  background: #185FA5;                  /* Fondo azul corporativo */
+  color: #ffffff;                       /* Texto blanco */
+  padding: 2rem;                        /* Espacio interior */
+  text-align: center;                   /* Texto centrado */
+}
+
+/* Título dentro del encabezado */
+.museo-header h1 {
+  font-size: 1.8rem;                    /* Tamaño grande */
+  color: #ffffff;                       /* Blanco */
+  margin-bottom: 0.5rem;                /* Espacio debajo */
+}
+
+/* Subtítulo dentro del encabezado */
+.museo-header p {
+  font-size: 1rem;                      /* Tamaño normal */
+  opacity: 0.85;                        /* Ligeramente transparente */
+}
+
+/* GRID RESPONSIVO PARA LAS SALAS ──────────────────────────────────
+   Este sistema se adapta automáticamente:
+   - En celular (pequeño): 1 columna
+   - En tablet (medio): 2 columnas
+   - En computadora (grande): 3 columnas
+*/
+.salas-grid {
+  display: grid;                        /* Sistema de cuadrícula */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                                        /* Columnas automáticas:
+                                           - auto-fit: se ajusta al contenedor
+                                           - minmax(280px, 1fr): mínimo 280px, expande si hay espacio
+                                        */
+  gap: 1.5rem;                          /* Espacio entre columnas y filas */
+  padding: 2rem;                        /* Espacio interior */
+  max-width: 1100px;                    /* Ancho máximo */
+  margin: 0 auto;                       /* Centrado */
 }
