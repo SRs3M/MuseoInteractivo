@@ -1,14 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- META INFORMACIÓN: Define cómo se interpreta y visualiza la página -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Museo Virtual de Ciencias Naturales</title>
+  
+  <!-- CARGA DE ESTILOS: Importa el archivo CSS para decorar la página -->
+  <!-- La ruta "css/styles.css" significa: carpeta "css" → archivo "styles.css" -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h1>Museo Virtual de Ciencias Naturales</h1>
-  <p>Bienvenido. Las 6 salas estarán disponibles próximamente.</p>
+      
+  <!-- ⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸
+      PARTE 1: PANTALLA DE ACCESO ──────────────────────────────────
+       Esta sección se muestra primero. El usuario debe ingresar una 
+       contraseña. Cuando la contraseña es correcta, JavaScript oculta
+       esta sección y muestra el contenido del museo.
+  --> 
+  <section id="pantalla-acceso">
+    <div class="acceso-card">
+      <!-- Títulos de bienvenida -->
+      <h1>Museo Virtual</h1>
+      <h2>Ciencias Naturales · Grado 7°</h2>
+      
+      <!-- Instrucciones para el usuario -->
+      <p class="acceso-subtitulo">
+        Ingresa el código de acceso para entrar al museo.
+      </p>
+      
+      <!-- CAMPO DE ENTRADA: Aquí el usuario escribe la contraseña
+           id="campo-clave" permite que JavaScript acceda a este elemento
+           type="password" oculta el texto con puntos (****)
+           placeholder="..." muestra texto de ayuda
+           autocomplete="off" evita que el navegador guarde la contraseña
+      -->
+      <input
+        type="password"
+        id="campo-clave"
+        placeholder="Código de acceso"
+        autocomplete="off"
+      />
+      
+      <!-- BOTÓN ENTRAR: Cuando se hace clic, JavaScript verifica la contraseña
+           id="btn-entrar" permite que JavaScript detecte el clic
+      -->
+      <button id="btn-entrar">Entrar al museo</button>
+      
+      <!-- MENSAJE DE ERROR: Se muestra solo si la contraseña es incorrecta
+           Inicialmente está oculto con CSS (display: none)
+           JavaScript lo hace visible si hay error (display: block)
+      -->
+      <p id="error-acceso" class="error-msg">
+        Código incorrecto. Inténtalo de nuevo.
+      </p>
+    </div>
+  </section>
+
+  <!-- ⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸⩸
+       PARTE 2: CONTENIDO DEL MUSEO ─────────────────────────────────
+       Esta sección está oculta inicialmente (CSS: display: none).
+       Cuando la contraseña es correcta, JavaScript la hace visible
+       (CSS: display: block).
+  --> 
+  <main id="contenido-museo">
+    <!-- ENCABEZADO DEL MUSEO -->
+    <header class="museo-header">
+      <h1>Museo Virtual de Ciencias Naturales</h1>
+      <p>Efectos del Fracking en los ecosistemas de Colombia</p>
+    </header>
+
+    <!-- CONTENEDOR DE SALAS: Aquí irán las 6 salas en la Etapa 3
+         grid = sistema de cuadrícula (filas y columnas)
+         id="salas-grid" permite que JavaScript lo llene con datos
+         En CSS está definido como un grid responsivo que se adapta 
+         al tamaño de la pantalla (mobile, tablet, desktop)
+         
+         Las tarjetas de salas se generarán automáticamente con JavaScript
+         leyendo datos de data.json
+    -->
+    <section class="salas-grid" id="salas-grid">
+      <!-- Aquí JavaScript insertará las tarjetas de las 6 salas -->
+    </section>
+    
+  </main>
+
+  <!-- CARGA DE LÓGICA: Importa el archivo JavaScript que contiene
+       toda la lógica e interactividad de la página.
+       El script va al final para que se cargue DESPUÉS de todo el HTML,
+       así JavaScript puede encontrar todos los elementos.
+  -->
   <script src="js/main.js"></script>
 </body>
 </html>
