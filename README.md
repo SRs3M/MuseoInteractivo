@@ -30,7 +30,7 @@ Sitio web interactivo que funcione como museo virtual donde los estudiantes de 7
 · GitHub Pages (hosting gratuito) : Despliegue gratuito con URL pública
 
 ## Ver el museo
-// - Insertar link - //
+https://srs3m.github.io/MuseoInteractivo/
 
 ## Licencia: MIT (https://mit-license.org/)
 
