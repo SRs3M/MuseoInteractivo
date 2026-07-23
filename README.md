@@ -49,8 +49,14 @@ https://srs3m.github.io/MuseoInteractivo/
 
 ### Ciclo de desarrollo
 
-Cada vez que termines una tarea concreta, sigue estos tres pasos:
-
+# Antes de iniciar a trabajar, sigue estos pasos:
+git fetch origin (Descarga la información del remoto sin cambiar nuestro local)
+git switch develop
+git status
+git log develop..origin/develop --oneline (muestra los commits nuevos en el remoto)
+git pull origin develop
+git switch <tu_rama>  (NUNCA trabajar en otra rama)
+# Cada vez que termines una tarea concreta, sigue estos tres pasos:
 git add .
 git commit -m "tipo: descripción clara de lo que hiciste"
 git push origin <tu_rama>
