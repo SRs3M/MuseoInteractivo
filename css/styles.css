@@ -1,3 +1,16 @@
+/* variables */
+:root {
+  --color-principal: #185FA5;
+  --color-hover:  #1451A0;
+  --color-verde: #2E7D32;
+  --color-fondo: #F5F7FA;
+  --color-texto: #2C2C2A;
+  --color-blanco: #FFFFFF;
+  --color-borde: #E0E0E0;
+  --radio-tarjeta: 12px;
+  --sombra-tarjeta: 0 4px 16px rgba(24, 95, 165, 0.10);
+}
+
 /* ESTILOS DE PANTALLA DE ACCESO ═══════════════════════════════════════
    Esta sección define cómo se ve la pantalla inicial donde el usuario 
    ingresa la contraseña. 
@@ -104,33 +117,119 @@
                                         /* JavaScript lo cambia a "block" después de verificar contraseña */
 }
 
-/* Encabezado del museo (título y tema) */
+/* Header */
 .museo-header {
-  background: #185FA5;                  /* Fondo azul corporativo */
-  color: #ffffff;                       /* Texto blanco */
-  padding: 2rem;                        /* Espacio interior */
-  text-align: center;                   /* Texto centrado */
+  background: var(--color-principal);
+  color: var(--color-blanco);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.museo-header h1 {font-size: 1.8rem; color: var(--color-blanco); margin-bottom: 0.4 rem;}
+.museo-header p {font-size: 1rem; opacity: 0.88; margin-bottom: 0.2rem;}
+.header-subtitulo {font-size: 0.85rem; opacity: 0.7;}
+
+/* Navegación */
+.museo-nav {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  justify-content: center; padding: 0.75rem 1rem;
+  background: var(--color-hover);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-btn {
+  background: transparent; color: rgba(255, 255, 255, 0.80);
+  border: 1.5px solid rgba(255, 255, 255, 0.30); border-radius: 20px;
+  padding: 5px 14px; font-size: 0.85rem; cursor: pointer;
+  transition: all 0.2s; font-family: Arial, sans-serif;
+}
+.nav-btn:hover, .nav-btn.activo {
+  background: var(--color-blanco); color: var(--color-principal);
+  border-color: var(--color-blanco); font-weight: 500;
 }
 
-/* Título dentro del encabezado */
-.museo-header h1 {
-  font-size: 1.8rem;                    /* Tamaño grande */
-  color: #ffffff;                       /* Blanco */
-  margin-bottom: 0.5rem;                /* Espacio debajo */
+/* Grid de Salas */
+#vista-inicio {
+  background: var(--color-fondo); padding: 2rem 1.5rem; min-height: 60vh;
+}
+.salas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5; max-width: 1100px; margin: 0 auto;
 }
 
-/* Subtítulo dentro del encabezado */
-.museo-header p {
-  font-size: 1rem;                      /* Tamaño normal */
-  opacity: 0.85;                        /* Ligeramente transparente */
+/* Tarjeta de Sala */
+.sala-card {
+  background: var(--color-blanco); border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-tarjeta); overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
+}
+.sala-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(24, 95, 165, 0.18);
+}
+.sala-card-img {
+  width: 100%; height: 140px;
+  background: linear-gradient(135deg, #c8d8ec, #e61f1b);
+  display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
+}
+.sala-card-body {padding: 1.1rem 1.2rem 1.2rem; }
+.sala-card-num {font-size: 0.72rem; font-weigth: 600; color: var(--color-principal); letter-spacing: 1px; margin-bottom: 0.3rem; }
+.sala-card-title {font-size: 1rem; font-weight: 600; color: var(--color-texto); margin-bottom: 0.5rem; line-height: 1.3; }
+.sala-card-desc {font-size: 0.85rem; color: #666; line-height: 1.5; margin-bottom: 1rem; }
+.sala-card-btn {
+  display: block; width: 100%; padding: 0.6rem;
+  background: var(--color-principal); color: var(--color-blanco);
+  border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 500;
+  cursor: pointer; transition: background 0.2s; font-family: Arial, sans-serif;
+}
+.sala-card-btn:hover { background: var(--color-hover); }
+
+/* Sala interior */
+#vista-sala { background: var(--color-fondo); min-height: 60vh; }
+.sala-inner { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+.btn-volver {
+  background: transparent; border: 1.5px solid var(--color-principal);
+  color: var(--color-principal); border-radius: 20px; padding: 6px 16px;
+  font-size: 0.85rem; cursor: pointer; margin-bottom: 1.2rem;
+  font-family: Arial, sans-serif; transition: all 0.2s;
+}
+.btn-volver:hover { background: var(--color-principal); color: var(--color-blanco); }
+.sala-banner {
+  background: var(--color-principal); color: var(--color-blanco);
+  border-radius: var(--radio-tarjeta); padding: 1.5rem 1.8rem;
+  margin-bottom: 1.5rem; text-align: center;
+}
+.sala-banner h2 { font-size: 1.4rem; color: var(--color-blanco); margin-bottom: 0.4rem; }
+.sala-banner p  { font-size: 0.9rem; opacity: 0.85; }
+/* Obras */
+.obras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.obra-card { background: var(--color-blanco); border-radius: var(--radio-tarjeta); box-shadow: var(--sombra-tarjeta); overflow: hidden; }
+.obra-media { width: 100%; aspect-ratio: 16/9; background: #e8e8e8; }
+.obra-media iframe, .obra-media img { width: 100%; height: 100%; object-fit: cover; border: none; }
+.obra-info  { padding: 1rem 1.1rem; }
+.obra-tipo  { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 12px; margin-bottom: 0.5rem; background: #E6F1FB; color: var(--color-principal); }
+.obra-tipo.video        { background: #FFF3E0; color: #E65100; }
+.obra-tipo.imagen       { background: #E8F5E9; color: var(--color-verde); }
+.obra-tipo.presentacion { background: #F3EEF9; color: #5B2D8E; }
+.obra-title { font-size: 0.95rem; font-weight: 600; color: var(--color-texto); margin-bottom: 0.3rem; }
+.obra-autor { font-size: 0.8rem; color: #888; }
+/* Footer */
+.museo-footer {
+  background: #1a1a1a; color: rgba(255,255,255,0.65);
+  text-align: center; padding: 1.5rem; font-size: 0.82rem; line-height: 1.8;
 }
 
-/* GRID RESPONSIVO PARA LAS SALAS ──────────────────────────────────
-   Este sistema se adapta automáticamente:
-   - En celular (pequeño): 1 columna
-   - En tablet (medio): 2 columnas
-   - En computadora (grande): 3 columnas
-*/
+/* Responsivo */
+@media (max-width: 600px) {
+  .museo-header h1 { font-size: 1.3rem; }
+  .nav-btn { font-size: 0.78rem; padding: 4px 10px; }
+  .salas-grid { grid-template-columns: 1fr; }
+  .obras-grid { grid-template-columns: 1fr; }
+}
+
 .salas-grid {
   display: grid;                        /* Sistema de cuadrícula */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -143,3 +242,4 @@
   max-width: 1100px;                    /* Ancho máximo */
   margin: 0 auto;                       /* Centrado */
 }
+
