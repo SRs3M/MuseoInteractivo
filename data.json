@@ -1,3 +1,28 @@
 {
-    "obras" : []
+    "obras" : [
+        {
+            "sala" : 1,
+            "tipo" : "video",
+            "titulo" : "Bienvenido al Museo Virtual",
+            "url" : "https://youtu.be/wrB7siccyLQ?si=F5iUz4ZkhOkesTU5",
+            "autor" : "matt dusk",
+            "descripcion" : "Video de introducción al museo y al tema del fracking"
+        },
+        {
+            "sala" : 2,
+            "tipo" : "video",
+            "titulo" : "¿Qué es el Fracking?",
+            "url" : "https://youtu.be/f3hz7L65PCs?si=heuyGTF4qsBLrE_a",
+            "autor" : "attou",
+            "descripcion" : "Explicación del proceso técnico del Fracking"
+        },
+        {
+            "sala" : 4,
+            "tipo" : "imagen",
+            "titulo" : "Contaminación en el agua por fracking",
+            "url" : "https://img.magnific.com/premium-photo/random-image_590832-9826.jpg",
+            "autor" : "no se ",
+            "descripcion" : "Imagen ilustrativa sobre contaminación hidrica"
+        }
+    ]
 }
