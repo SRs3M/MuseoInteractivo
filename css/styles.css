@@ -124,7 +124,7 @@
   padding: 2rem 1.5rem;
   text-align: center;
 }
-.museo-header h1 {font-size: 1.8rem; color: var(--color-blanco); margin-bottom: 0.4 rem;}
+.museo-header h1 {font-size: 1.8rem; color: var(--color-blanco); margin-bottom: 0.4rem;}
 .museo-header p {font-size: 1rem; opacity: 0.88; margin-bottom: 0.2rem;}
 .header-subtitulo {font-size: 0.85rem; opacity: 0.7;}
 
@@ -148,7 +148,7 @@
 
 /* Grid de Salas */
 #vista-inicio {
-  background: var(--color-fondo); padding: 2rem 1.5rem; min-height: 60vh;
+  background: var(--color-fondo); min-height: 60vh;
 }
 .salas-grid {
   display: grid;
@@ -168,7 +168,7 @@
 }
 .sala-card-img {
   width: 100%; height: 140px;
-  background: linear-gradient(135deg, #c8d8ec, #e61f1b);
+  background: linear-gradient(135deg, #c8d8ec, var(--color-principal));
   display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
 }
 .sala-card-body {padding: 1.1rem 1.2rem 1.2rem; }
@@ -243,3 +243,54 @@
   margin: 0 auto;                       /* Centrado */
 }
 
+
+/* Contador de obras en tarjeta */
+.sala-card-obras {
+  font-size: 0.78rem;
+  color: var(--color-verde);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+/* Sala vacía */
+.obras-vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #888;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+/* Descripción de obra */
+.obra-desc {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 0.4rem;
+  line-height: 1.5;
+}
+
+/* Presentacion placeholder */
+.obra-presentacion a {
+  display: block;
+  width: 100%;
+  heigth: 100%;
+  text-decoration: none;
+}
+.presentacion-placeholder {
+  width: 100%;
+  heigth: 100%;
+  background: linear-gradient(135deg, #F3EEF9, #e8e0F5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #5b2d8e;
+  text-align: center;
+  line-height: 2;
+  min-height: 160px;
+  transition: background 0.2s;
+}
+.presentacion-placeholder:hover {
+  background: linear-gradient(135deg, #e8e0f5, #d9cff0);
+}
