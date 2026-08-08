@@ -4,7 +4,7 @@
             "sala" : 1,
             "tipo" : "video",
             "titulo" : "Bienvenido al Museo Virtual",
-            "url" : "https://youtu.be/wrB7siccyLQ?si=F5iUz4ZkhOkesTU5",
+            "url" : "https://www.youtube.com/embed/wrB7siccyLQ?si=b9YHCMNA7tF6z4n4",
             "autor" : "matt dusk",
             "descripcion" : "Video de introducción al museo y al tema del fracking"
         },
@@ -12,7 +12,7 @@
             "sala" : 2,
             "tipo" : "video",
             "titulo" : "¿Qué es el Fracking?",
-            "url" : "https://youtu.be/f3hz7L65PCs?si=heuyGTF4qsBLrE_a",
+            "url" : "https://www.youtube.com/embed/f3hz7L65PCs?si=pZ0_4k3NCi6ZiJ6E",
             "autor" : "attou",
             "descripcion" : "Explicación del proceso técnico del Fracking"
         },
