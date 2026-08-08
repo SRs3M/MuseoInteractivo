@@ -17,6 +17,14 @@
             "descripcion" : "Explicación del proceso técnico del Fracking"
         },
         {
+            "sala" : 3,
+            "tipo" : "imagen",
+            "titulo" : "prueba 4",
+            "url" : "assets/imgPruebaSala3.jpg",
+            "autor" : "no se",
+            "descripcion" : "prueba 4"
+        },
+        {
             "sala" : 4,
             "tipo" : "imagen",
             "titulo" : "Contaminación en el agua por fracking",
